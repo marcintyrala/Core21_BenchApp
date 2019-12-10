@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "CampaignsList";
+
+}
+
+<h2>CampaignsList</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Version</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr class="table table-hover">
+            <td><a asp-action="CampaignView" asp-route-id="@item.Name">@item.Name</a></td>
+            <td>@item.Version</td>
+            <td>@item.Description</td>
+        </tr>
+        }
+
+    </tbody>
+</table>
+
+

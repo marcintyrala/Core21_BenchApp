@@ -12,6 +12,7 @@ namespace Core21_BenchApp.Controllers
     {
         public IActionResult Index()
         {
+
             return View();
         }
 
@@ -38,6 +39,12 @@ namespace Core21_BenchApp.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        [HttpPost]
+        public ActionResult ChangePath(string searchText)
+        {
+            BenchProperties.CampaignsPath = searchText;
+            return View();
         }
     }
 }
