@@ -19,6 +19,16 @@
         {
         <tr class="table table-hover">
             <td><a asp-action="CampaignView" asp-route-id="@item.Name">@item.Name</a></td>
+            <td>@Html.ActionLink(
+              (string)item.Version,
+               "Campaign",
+               "CampaignView",
+               new                  // routeValues
+               {                                                     
+                   id = item.Name
+               },
+               null)
+            </td>
             <td>@item.Version</td>
             <td>@item.Description</td>
         </tr>

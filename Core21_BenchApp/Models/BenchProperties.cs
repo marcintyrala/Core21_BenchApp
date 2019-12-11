@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Core21_BenchApp.Models
 {
-    public class BenchProperties
+    public static class BenchProperties
     {
-        [DisplayName("Benc hPath")]
+
         public static string BenchPath { get; set; } = @"C:\bench_backup_22-11-2019\";
+        public static string BenchPathDefaultValue { get; set; } = @"C:\bench_backup_22-11-2019\";
         public static string CampaignsPath { get; set; } = @"C:\bench_backup_22-11-2019\Campaigns";
         public static string searchCampaignsPattern { get; set; } = "*.xcamp";
     }

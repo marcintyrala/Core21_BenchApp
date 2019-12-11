@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,9 @@ namespace Core21_BenchApp.Models
 
         // Path added as extra field
         public string Path { get; set; }
+        // Folder path as extre field
+        public string FolderPath { get; set; }
+
 
         private string descriptionField;
 

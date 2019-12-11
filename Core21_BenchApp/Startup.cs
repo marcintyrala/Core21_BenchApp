@@ -56,7 +56,7 @@ namespace Core21_BenchApp
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Campaign}/{action=CampaignsList}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

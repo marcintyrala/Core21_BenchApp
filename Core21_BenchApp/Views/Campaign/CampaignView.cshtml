@@ -5,7 +5,9 @@
 
 
 <h2>Campaign Detailed View</h2>
-<h2>Campaign Name: @Model.Name</h2>
+<h2>Campaign Name: @Model.CurrentCampaignDescription.Name</h2>
+
+@Model.
 
 
 
@@ -19,7 +21,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in @Model.Links)
+        @foreach (var item in @Model.CurrentCampaignDescription.Links)
         {
             var route = "ComponentPage/" + @item.Name;
             <tr>
@@ -43,7 +45,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in @Model.Methods)
+        @foreach (var item in @Model.CurrentCampaignDescription.Methods)
         {
             <tr>
 
@@ -54,3 +56,48 @@
         }
     </tbody>
 </table>
+
+
+@if (Model.CurrentParameters != null)
+{
+
+
+    <h4>Parameters:</h4>
+
+
+    <p>Source file: @Model.CurrentParameters.CampaignDescription.Reference</p>
+
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+
+                <th>Reference</th>
+                <th>ID</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var device in Model.CurrentParameters.Device)
+            {
+                <tr>
+                    <td>@device.Reference</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                @if (device.Parameter != null)
+                {
+                    @foreach (var item in device.Parameter)
+                    {
+                        <tr>
+                            <td></td>
+                            <td>@item.ID</td>
+                            <td>@item.Value</td>
+                        </tr>
+                    }}
+            }
+        </tbody>
+    </table>
+
+}

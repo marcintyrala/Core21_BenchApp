@@ -1,26 +1,34 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@{
+    var data = ViewBag.Message;
+}
 
-<h3>Bench default path: </h3>
-<p>@Html.DisplayText(BenchProperties.BenchPath)</p>
+@model IndexViewModel
 
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Index</h2>
-    @using (Html.BeginForm("ChangePath", "Home"))
-    {
-        <table>
-            <tr>
-                <td>
-                    Name:
-                </td>
-                <td>
-                    <input type="text" id="SearchText" name="SearchText" style="width: 325px" />
-                </td>
-                <td></td>
-                <td>
-                    <input type="submit" id="ChangePath" value="Search" />
-                </td>
-            </tr>
-        </table>
-    }
+
+<h3>Bench documentation</h3>
+
+<h5>Actual bench path: @data.BenchPath</h5>
+
+@using (Html.BeginForm())
+{
+<p>
+    Update bench path:
+    @Html.TextBoxFor(s => s.BenchPath, new { @class = "form-control", Value = data.BenchPath })
+
+
+
+    <input type="submit" value=" Update" />
+</p>
+}
+@using (Html.BeginForm("BenchDefaultValue", "Home"))
+{
+<p>
+    <input type="submit" value="Set default bench path" />
+</p>
+}
+
+
+

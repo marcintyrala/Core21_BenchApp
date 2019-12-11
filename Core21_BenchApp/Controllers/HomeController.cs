@@ -12,7 +12,11 @@ namespace Core21_BenchApp.Controllers
     {
         public IActionResult Index()
         {
-
+            IndexViewModel indexViewModel = new IndexViewModel()
+            {
+            BenchPath = BenchProperties.BenchPath
+            };
+            ViewBag.Message = indexViewModel;
             return View();
         }
 
@@ -40,11 +44,24 @@ namespace Core21_BenchApp.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-        [HttpPost]
-        public ActionResult ChangePath(string searchText)
+
+       [HttpPost]
+       // [Route("Home/ChangePath/{searchText}")]
+        public ActionResult Index(IndexViewModel model)
         {
-            BenchProperties.CampaignsPath = searchText;
+            BenchProperties.BenchPath = model.BenchPath;
+            ViewBag.Message = model;
             return View();
         }
+
+        [HttpPost]
+        // [Route("Home/ChangePath/{searchText}")]
+        public ActionResult BenchDefaultValue()
+        {
+            BenchProperties.BenchPath = BenchProperties.BenchPathDefaultValue;
+            return RedirectToAction("Index");
+        }
+
+
     }
 }
