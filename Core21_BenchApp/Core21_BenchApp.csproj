@@ -14,7 +14,10 @@
     <Content Update="Views\Campaign\CampaignsList.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Views\Component\Index.cshtml">
+    <Content Update="Views\Component\ComponentView.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Test\TestsList.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
   </ItemGroup>

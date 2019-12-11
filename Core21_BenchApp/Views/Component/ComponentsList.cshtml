@@ -17,11 +17,11 @@
     <tbody>
         @foreach (var item in Model)
         {
-             <tr class="table table-hover">
-                <td>@item.Name</td>
-                <td>@item.Version</td>
-                <td>@item.Description</td>
-            </tr>
+        <tr class="table table-hover">
+            <td><a asp-action="ComponentView" asp-route-id="@item.Name">@item.Name</a></td>
+            <td>@item.Version</td>
+            <td>@item.Description</td>
+        </tr>
         }
 
     </tbody>

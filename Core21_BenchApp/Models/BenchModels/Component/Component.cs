@@ -5,19 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-
+using Core21_BenchApp.Models.BenchModels;
 namespace Core21_BenchApp.Models
 {
     /// <summary>
     /// Component Xml Model 
     /// </summary>
     [XmlRoot(ElementName = "Device")]
-    public class Component
+    public class Component : BenchObjectBaseClass
     {
-        // Path added as extra field
-        public string Path { get; set; }
-        // Folder path as extre field
-        public string FolderPath { get; set; }
+
 
 
         [XmlAttribute(AttributeName = "Name")]

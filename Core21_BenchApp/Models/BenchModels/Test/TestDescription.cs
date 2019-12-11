@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Serialization;
-using Core21_BenchApp.Models.BenchModels;
 
-namespace Core21_BenchApp.Models
+namespace Core21_BenchApp.Models.BenchModels.Test
 {
 
     // NOTE: Generated code may require at least .NET Framework 4.5 or .NET Core/Standard 2.0.
@@ -16,25 +12,26 @@ namespace Core21_BenchApp.Models
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = false)]
-    public partial class CampaignDescription : BenchObjectBaseClass
+    public partial class TestDescription : BenchObjectBaseClass
     {
-
-
-
 
         private string descriptionField;
 
-        private CampaignDescriptionLink[] linksField;
+        private TestDescriptionLink[] linksField;
 
-        private CampaignDescriptionMethod[] methodsField;
+        private TestDescriptionMethod[] methodsField;
 
-        private object instrumentsField;
+        private TestDescriptionInstrument[] instrumentsField;
 
-        private object resumeCyclesField;
+        private TestDescriptionResumeCycles resumeCyclesField;
 
         private object extensionsField;
 
-        private object dynamicMeasurementPlansField;
+        private TestDescriptionDynamicMeasurementPlans dynamicMeasurementPlansField;
+
+        private object refugeCyclesField;
+
+        private object stopCyclesField;
 
         private string versionField;
 
@@ -48,9 +45,9 @@ namespace Core21_BenchApp.Models
 
         private ushort secuInhibField;
 
-        private ushort t1FileSizeField;
+        private uint t1FileSizeField;
 
-        private ushort t1PeriodField;
+        private byte t1PeriodField;
 
         private uint t2FileSizeField;
 
@@ -63,6 +60,8 @@ namespace Core21_BenchApp.Models
         private byte slowPeriodField;
 
         private ushort nbMaxPointField;
+
+        private string groupNameField;
 
         private byte inheritT1Field;
 
@@ -92,6 +91,8 @@ namespace Core21_BenchApp.Models
 
         private string measuresPlanFileField;
 
+        private string procedureField;
+
         /// <remarks/>
         public string Description
         {
@@ -107,7 +108,7 @@ namespace Core21_BenchApp.Models
 
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayItemAttribute("Link", IsNullable = false)]
-        public CampaignDescriptionLink[] Links
+        public TestDescriptionLink[] Links
         {
             get
             {
@@ -121,7 +122,7 @@ namespace Core21_BenchApp.Models
 
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayItemAttribute("Method", IsNullable = false)]
-        public CampaignDescriptionMethod[] Methods
+        public TestDescriptionMethod[] Methods
         {
             get
             {
@@ -134,7 +135,8 @@ namespace Core21_BenchApp.Models
         }
 
         /// <remarks/>
-        public object Instruments
+        [System.Xml.Serialization.XmlArrayItemAttribute("Instrument", IsNullable = false)]
+        public TestDescriptionInstrument[] Instruments
         {
             get
             {
@@ -147,7 +149,7 @@ namespace Core21_BenchApp.Models
         }
 
         /// <remarks/>
-        public object ResumeCycles
+        public TestDescriptionResumeCycles ResumeCycles
         {
             get
             {
@@ -173,7 +175,7 @@ namespace Core21_BenchApp.Models
         }
 
         /// <remarks/>
-        public object DynamicMeasurementPlans
+        public TestDescriptionDynamicMeasurementPlans DynamicMeasurementPlans
         {
             get
             {
@@ -182,6 +184,32 @@ namespace Core21_BenchApp.Models
             set
             {
                 this.dynamicMeasurementPlansField = value;
+            }
+        }
+
+        /// <remarks/>
+        public object RefugeCycles
+        {
+            get
+            {
+                return this.refugeCyclesField;
+            }
+            set
+            {
+                this.refugeCyclesField = value;
+            }
+        }
+
+        /// <remarks/>
+        public object StopCycles
+        {
+            get
+            {
+                return this.stopCyclesField;
+            }
+            set
+            {
+                this.stopCyclesField = value;
             }
         }
 
@@ -271,7 +299,7 @@ namespace Core21_BenchApp.Models
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public ushort T1FileSize
+        public uint T1FileSize
         {
             get
             {
@@ -285,7 +313,7 @@ namespace Core21_BenchApp.Models
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public ushort T1Period
+        public byte T1Period
         {
             get
             {
@@ -378,6 +406,20 @@ namespace Core21_BenchApp.Models
             set
             {
                 this.nbMaxPointField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string GroupName
+        {
+            get
+            {
+                return this.groupNameField;
+            }
+            set
+            {
+                this.groupNameField = value;
             }
         }
 
@@ -576,13 +618,27 @@ namespace Core21_BenchApp.Models
                 this.measuresPlanFileField = value;
             }
         }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Procedure
+        {
+            get
+            {
+                return this.procedureField;
+            }
+            set
+            {
+                this.procedureField = value;
+            }
+        }
     }
 
     /// <remarks/>
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class CampaignDescriptionLink
+    public partial class TestDescriptionLink
     {
 
         private string nameField;
@@ -638,7 +694,7 @@ namespace Core21_BenchApp.Models
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class CampaignDescriptionMethod
+    public partial class TestDescriptionMethod
     {
 
         private string nameField;
@@ -718,6 +774,212 @@ namespace Core21_BenchApp.Models
             set
             {
                 this.precompileField = value;
+            }
+        }
+    }
+
+    /// <remarks/>
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+    public partial class TestDescriptionInstrument
+    {
+
+        private string nameField;
+
+        private string menuNameField;
+
+        private string referenceField;
+
+        private string rightsField;
+
+        private string screen1Field;
+
+        private string screen2Field;
+
+        private string screen3Field;
+
+        private string screen4Field;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this.nameField;
+            }
+            set
+            {
+                this.nameField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string MenuName
+        {
+            get
+            {
+                return this.menuNameField;
+            }
+            set
+            {
+                this.menuNameField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Reference
+        {
+            get
+            {
+                return this.referenceField;
+            }
+            set
+            {
+                this.referenceField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Rights
+        {
+            get
+            {
+                return this.rightsField;
+            }
+            set
+            {
+                this.rightsField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Screen1
+        {
+            get
+            {
+                return this.screen1Field;
+            }
+            set
+            {
+                this.screen1Field = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Screen2
+        {
+            get
+            {
+                return this.screen2Field;
+            }
+            set
+            {
+                this.screen2Field = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Screen3
+        {
+            get
+            {
+                return this.screen3Field;
+            }
+            set
+            {
+                this.screen3Field = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Screen4
+        {
+            get
+            {
+                return this.screen4Field;
+            }
+            set
+            {
+                this.screen4Field = value;
+            }
+        }
+    }
+
+    /// <remarks/>
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+    public partial class TestDescriptionResumeCycles
+    {
+
+        private TestDescriptionResumeCyclesResumeCycle resumeCycleField;
+
+        /// <remarks/>
+        public TestDescriptionResumeCyclesResumeCycle ResumeCycle
+        {
+            get
+            {
+                return this.resumeCycleField;
+            }
+            set
+            {
+                this.resumeCycleField = value;
+            }
+        }
+    }
+
+    /// <remarks/>
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+    public partial class TestDescriptionResumeCyclesResumeCycle
+    {
+
+        private string referenceField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Reference
+        {
+            get
+            {
+                return this.referenceField;
+            }
+            set
+            {
+                this.referenceField = value;
+            }
+        }
+    }
+
+    /// <remarks/>
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+    public partial class TestDescriptionDynamicMeasurementPlans
+    {
+
+        private string dynamicMeasurementPlanField;
+
+        /// <remarks/>
+        public string DynamicMeasurementPlan
+        {
+            get
+            {
+                return this.dynamicMeasurementPlanField;
+            }
+            set
+            {
+                this.dynamicMeasurementPlanField = value;
             }
         }
     }

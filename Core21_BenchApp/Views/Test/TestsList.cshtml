@@ -1,10 +1,10 @@
 ﻿
 @{
-    ViewData["Title"] = "CampaignsList";
+    ViewData["Title"] = "Tests List";
 
 }
 
-<h2>CampaignsList</h2>
+<h2>Tests List</h2>
 
 <table class="table table-striped">
     <thead>
@@ -18,8 +18,7 @@
         @foreach (var item in Model)
         {
         <tr class="table table-hover">
-            <td><a asp-action="CampaignView" asp-route-id="@item.Name">@item.Name</a></td>
-
+            <td><a asp-action="ComponentView" asp-route-id="@item.Name">@item.Name</a></td>
             <td>@item.Version</td>
             <td>@item.Description</td>
         </tr>

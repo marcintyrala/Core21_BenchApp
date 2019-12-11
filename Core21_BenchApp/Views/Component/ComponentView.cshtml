@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewData["Title"] = "Component Page";
+}
+
+
+<h2>Component Detailed View</h2>
+<h5>Component Name: @Model.CurrentComponent.Name</h5>
+
+<div class="alert alert-success" role="alert">
+
+    <p>@Model.CurrentComponent.Description</p>
+</div>
+
+<h4>Links:</h4>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Optional</th>
+            <th>Reference</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in @Model.CurrentComponent.Links.Link)
+        {
+            var route = "ComponentPage/" + @item.Name;
+        <tr>
+
+            <td>@item.Name</td>
+            <td>@item.Optional</td>
+            <td>@item.Reference</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+
+<h4>Methods:</h4>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Visibility</th>
+            <th>Reference</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in @Model.CurrentComponent.Methods.Method)
+        {
+        <tr>
+
+            <td>@item.Name</td>
+            <td>@item.Visibility</td>
+            <td>@item.Reference</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+
+<p>Quantities:</p>
+<table class="table table-striped w-100">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Description</th>
+            <th>PhysicalChannel</th>
+        </tr>
+    </thead>
+
+</table>
+
